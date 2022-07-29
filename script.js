@@ -1,5 +1,6 @@
 //declare variables globally
 let cache = 0;
+let displayValue = 0;
 
 const one = document.querySelector("#one");
 const two = document.querySelector("#two");
@@ -49,11 +50,15 @@ function operate(a, calculation, b) {
 
 
 
+//display shows displayValue
+
+const displayContent = document.querySelector("#displayContent");
+
+displayContent.innerText = displayValue;
 
 
 
 
 
+//pressing equal updates displayValue
 
-
-//pressing equal displays cache
