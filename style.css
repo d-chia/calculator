@@ -1,5 +1,97 @@
 body {
     box-sizing: border-box;
-    background-color: #848D86;
+    background-color: #C1F0FB;
     font-family: 'Manrope', Helvetica, Arial, sans-serif;
+}
+
+.container {
+    width: 100%;
+}
+
+header {
+    padding: 20px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calculator {
+    background-color: gray;
+    border-radius: 10px;
+    border: solid 2px black;
+    width: 360px;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.display {
+    width: 340px;
+    height: 50px;
+    margin-bottom: 20px;
+    background-color: #4C5258;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#displayContent {
+    color: lightgray;
+    padding: 0px 10px;
+    font-size: 30px;
+}
+
+.buttonSection {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.buttonSection button {
+    width: 70px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: lightgray;
+}
+
+.numbers {
+    display: flex;
+    flex-wrap: wrap;
+    width: 230px;
+    gap: 10px;
+}
+
+break {
+    flex-basis: 50%;
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+}
+
+.operations {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 70px;
+}
+
+#AC {
+    background-color: #F2A5F5;
+}
+
+#equals {
+    background-color: #FFE0AB;
 }
