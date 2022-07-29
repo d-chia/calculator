@@ -1,6 +1,12 @@
-//declare variables globally
+//declare variables globally: stores inputs and display value
+
+let firstNum = 0;
+let secondNum;
 let cache = 0;
 let displayValue = 0;
+
+
+//declare variables globally: buttons as js elements
 
 const one = document.querySelector("#one");
 const two = document.querySelector("#two");
@@ -24,28 +30,28 @@ const subtraction = document.querySelector("#subtraction");
 
 //calculation functions
 
-function add(firstNum, secondNum) {
-    return firstNum + secondNum;
+function add(a, b) {
+    return a + b;
 }
 
-function subtract(firstNum, secondNum) {
-    return firstNum - secondNum;
+function subtract(a, b) {
+    return a - b;
 }
 
-function multiply(firstNum, secondNum) {
-    return firstNum * secondNum;
+function multiply(a, b) {
+    return a * b;
 }
 
-function divide(firstNum, secondNum) {
-    return firstNum / secondNum;
+function divide(a, b) {
+    return a / b;
 }
 
 
 //operator function takes three arguments
-//first number - operation - second number
+//first number - operation() - second number
 
-function operate(a, calculation, b) {
-    return calculation(a, b);
+function operate(firstNum, calculation, secondNum) {
+    return calculation(firstNum, secondNum);
 }
 
 
@@ -62,3 +68,9 @@ displayContent.innerText = displayValue;
 
 //pressing equal updates displayValue
 
+
+
+
+//if button that is not calculation (=number button) is pressed
+//while result is displayed (somehow connected to cache?)
+//reset and start with new input
