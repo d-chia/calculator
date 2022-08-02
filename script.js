@@ -38,7 +38,8 @@ function multiply(a, b) {
 
 function divide(a, b) {
     if (b == 0) {
-        return alert("Don't break the universe!")
+        reset ();
+        return alert("Don't break the universe!");
     } else {
         return +a / +b;
     }
@@ -86,13 +87,14 @@ function numInput(e) {
 //add event listener to AC 
 //add clear all by emptying and zeroing arrays and inputs
 
-AC.addEventListener("click", () => {
+AC.addEventListener("click", reset); 
+
+function reset() {
     cache = 0;
     inputArray = [];
     displayValue = 0;
     displayUpdate();
-    }
-)
+};
 
 
 
