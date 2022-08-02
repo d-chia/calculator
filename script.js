@@ -3,7 +3,8 @@
 let firstNum;
 let secondNum;
 let cache;
-let inputArray = [];
+let currentOperation = "default";
+let inputArray = [0];
 let displayValue = 0;
 
 
@@ -24,19 +25,19 @@ const subtraction = document.querySelector("#subtraction");
 //calculation functions
 
 function add(a, b) {
-    return a + b;
+    return +a + +b;
 }
 
 function subtract(a, b) {
-    return a - b;
+    return +a - +b;
 }
 
 function multiply(a, b) {
-    return a * b;
+    return +a * +b;
 }
 
 function divide(a, b) {
-    return a / b;
+    return +a / +b;
 }
 
 
@@ -44,7 +45,7 @@ function divide(a, b) {
 //first number - operation() - second number
 
 function operate(firstNum, calculation, secondNum) {
-    return calculation(firstNum, secondNum);
+    return window[calculation](firstNum, secondNum);
 }
 
 
@@ -92,10 +93,54 @@ AC.addEventListener("click", () => {
 
 
 //add event listener to operation buttons
-//operation button switches mode variable to matching operation
+//operation button switches current Operation variable to matching operation
+//also moves current input array to cache as number
+//clears input array
+
+
+addition.addEventListener("click", () => {
+        currentOperation = "add";
+        cache = +inputArray.join("");
+        inputArray = [0];
+    }
+);
+
+subtraction.addEventListener("click", () => {
+        currentOperation = "subtract";
+        cache = +inputArray.join("");
+        inputArray = [0];
+    }
+);
+
+multiplication.addEventListener("click", () => {
+        currentOperation = "multiply";
+        cache = +inputArray.join("");
+        inputArray = [0];
+    }
+);
+
+division.addEventListener("click", () => {
+        currentOperation = "divide";
+        cache = +inputArray.join("");
+        inputArray = [0];
+    }
+);
 
 
 
+//add event listener to equals button
+//equals button runs operation with number in cache, current operation, and current input array
+//shows result in display
+
+equals.addEventListener("click", () => {
+        let x = +inputArray.join("");
+        let result = operate(cache, currentOperation, x);
+        cache = result;
+        displayValue = result;
+        inputArray = [0];
+        displayUpdate();
+    }
+);
 
 
 
