@@ -37,7 +37,11 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-    return +a / +b;
+    if (b == 0) {
+        return alert("Don't break the universe!")
+    } else {
+        return +a / +b;
+    }
 }
 
 
