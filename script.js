@@ -14,6 +14,7 @@ const decimal = document.querySelector("#decimal");
 
 const AC = document.querySelector("#AC");
 const equals = document.querySelector("#equals");
+
 const division = document.querySelector("#division");
 const multiplication = document.querySelector("#multiplication");
 const addition = document.querySelector("#addition");
@@ -90,6 +91,11 @@ AC.addEventListener("click", () => {
 
 
 
+//add event listener to operation buttons
+//operation button switches mode variable to matching operation
+
+
+
 
 
 
@@ -115,4 +121,4 @@ AC.addEventListener("click", () => {
 //reset and start with new input
 
 
-//when press oepration --> store whatever is in array in cache --> empty input array  --> fill input array again (default 0?) --> operation or equals puts number in cache again --> display cache as result
+//when press operation --> store whatever is in array in cache --> empty input array  --> fill input array again (default 0?) --> operation or equals puts number in cache again --> display cache as result
