@@ -10,17 +10,6 @@ let displayValue = 0;
 //declare variables globally: buttons as js elements
 
 const numButtons = document.querySelectorAll(".numButtons")
-
-const one = document.querySelector("#one");
-const two = document.querySelector("#two");
-const three = document.querySelector("#three");
-const four = document.querySelector("#four");
-const five = document.querySelector("#five");
-const six = document.querySelector("#six");
-const seven = document.querySelector("#seven");
-const eight = document.querySelector("#eight");
-const nine = document.querySelector("#nine");
-const zero = document.querySelector("#zero");
 const decimal = document.querySelector("#decimal");
 
 const AC = document.querySelector("#AC");
