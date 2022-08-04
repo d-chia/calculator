@@ -3,7 +3,7 @@
 let firstNum;
 let secondNum;
 let cache = undefined;
-let currentOperation = "default";
+let currentOperation = undefined;
 let inputArray = [0];
 let displayValue = 0;
 
@@ -91,6 +91,7 @@ AC.addEventListener("click", reset);
 
 function reset() {
     cache = undefined;
+    currentOperation = undefined;
     inputArray = [];
     displayValue = 0;
     displayUpdate();
@@ -186,7 +187,9 @@ function getResult() {
 
 
 
+
+
+//notes:
 //when press operation --> store whatever is in array in cache --> empty input array  --> fill input array again (default 0?) --> operation or equals puts number in cache again --> display cache as result
-
-
 //continuation: refactor calculation of result in own function --> call function when cache is not empty OR: if currentOperation != default --> store result in cache --> continue normal
+//for keyboard input: addEvent Listener for keydown on button id --> trigger buttons
