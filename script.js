@@ -84,7 +84,6 @@ function numInput(e) {
 };
 
 
-
 //add event listener to AC 
 //add clear all by emptying and zeroing arrays and inputs
 
@@ -98,12 +97,10 @@ function reset() {
 };
 
 
-
 //add event listener to operation buttons
 //operation button switches current Operation variable to matching operation
 //also moves current input array to cache as number
 //clears input array
-
 
 addition.addEventListener("click", () => {
         if (cache === undefined) {
@@ -158,7 +155,6 @@ division.addEventListener("click", () => {
 );
 
 
-
 //add event listener to equals button
 //equals button runs operation with number in cache, current operation, and current input array
 //shows result in display
@@ -180,26 +176,6 @@ function getResult() {
     cache = result;
 }
 
-
-//notes, ideas:
-//user input numbers are stored in cache array
-//array transformed into int and stored in firstNum at every input
-//when button for calculation is pressed, mode is toggled or stored
-
-//declare variable for modes that are called in operator
-// let mode = inputMode;
-
-//also initiates input into second array (not in default input mode)
-//array transformed into int and stored in secondNum at every input
-//pressing equal runs operate function with all three parameters
-//pressing equal updates displayValue = result
-
-
-
-
-//if button that is not calculation (=number button) is pressed
-//while result is displayed (somehow connected to cache?)
-//reset and start with new input
 
 
 //when press operation --> store whatever is in array in cache --> empty input array  --> fill input array again (default 0?) --> operation or equals puts number in cache again --> display cache as result
