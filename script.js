@@ -48,7 +48,7 @@ function divide(a, b) {
 
 //operator function takes three arguments
 //first number - operation() - second number
-//window function is necessary to call function with name, not string
+//"window" function is necessary to call function with name, not string
 
 function operate(firstNum, calculation, secondNum) {
     return window[calculation](firstNum, secondNum);
@@ -109,6 +109,8 @@ addition.addEventListener("click", () => {
             inputArray = [0];
         } else {
             getResult();
+            displayValue = cache;
+            displayUpdate();
             currentOperation = "add";
             inputArray = [0];
         }
@@ -122,6 +124,8 @@ subtraction.addEventListener("click", () => {
             inputArray = [0];
         } else {
             getResult();
+            displayValue = cache;
+            displayUpdate();
             currentOperation = "subtract";
             inputArray = [0];
         }
@@ -135,6 +139,8 @@ multiplication.addEventListener("click", () => {
             inputArray = [0];
         } else {
             getResult();
+            displayValue = cache;
+            displayUpdate();
             currentOperation = "multiply";
             inputArray = [0];
         }
@@ -148,6 +154,8 @@ division.addEventListener("click", () => {
             inputArray = [0];
         } else {
             getResult();
+            displayValue = cache;
+            displayUpdate();
             currentOperation = "divide";
             inputArray = [0];
         }
