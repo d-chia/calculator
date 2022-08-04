@@ -2,7 +2,7 @@
 
 let firstNum;
 let secondNum;
-let cache;
+let cache = undefined;
 let currentOperation = "default";
 let inputArray = [0];
 let displayValue = 0;
@@ -48,6 +48,7 @@ function divide(a, b) {
 
 //operator function takes three arguments
 //first number - operation() - second number
+//window function is necessary to call function with name, not string
 
 function operate(firstNum, calculation, secondNum) {
     return window[calculation](firstNum, secondNum);
@@ -90,7 +91,7 @@ function numInput(e) {
 AC.addEventListener("click", reset); 
 
 function reset() {
-    cache = 0;
+    cache = undefined;
     inputArray = [];
     displayValue = 0;
     displayUpdate();
@@ -139,16 +140,21 @@ division.addEventListener("click", () => {
 //shows result in display
 
 equals.addEventListener("click", () => {
-        let x = +inputArray.join("");
-        let result = operate(cache, currentOperation, x);
-        cache = result;
-        displayValue = result;
+        getResult();
+        displayValue = cache;
         inputArray = [0];
         displayUpdate();
     }
 );
 
 
+//declare function to calculate with number in cache, current operation, and current input array
+
+function getResult() {
+    let x = +inputArray.join("");
+    let result = operate(cache, currentOperation, x);
+    cache = result;
+}
 
 
 //notes, ideas:
@@ -173,3 +179,6 @@ equals.addEventListener("click", () => {
 
 
 //when press operation --> store whatever is in array in cache --> empty input array  --> fill input array again (default 0?) --> operation or equals puts number in cache again --> display cache as result
+
+
+//continuation: refactor calculation of result in own function --> call function when cache is not empty OR: if currentOperation != default --> store result in cache --> continue normal
