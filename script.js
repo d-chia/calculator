@@ -106,30 +106,54 @@ function reset() {
 
 
 addition.addEventListener("click", () => {
-        currentOperation = "add";
-        cache = +inputArray.join("");
-        inputArray = [0];
+        if (cache === undefined) {
+            currentOperation = "add";
+            cache = +inputArray.join("");
+            inputArray = [0];
+        } else {
+            getResult();
+            currentOperation = "add";
+            inputArray = [0];
+        }
     }
 );
 
 subtraction.addEventListener("click", () => {
-        currentOperation = "subtract";
-        cache = +inputArray.join("");
-        inputArray = [0];
+        if (cache === undefined) {
+            currentOperation = "subtract";
+            cache = +inputArray.join("");
+            inputArray = [0];
+        } else {
+            getResult();
+            currentOperation = "subtract";
+            inputArray = [0];
+        }
     }
 );
 
 multiplication.addEventListener("click", () => {
-        currentOperation = "multiply";
-        cache = +inputArray.join("");
-        inputArray = [0];
+        if (cache === undefined) {
+            currentOperation = "multiply";
+            cache = +inputArray.join("");
+            inputArray = [0];
+        } else {
+            getResult();
+            currentOperation = "multiply";
+            inputArray = [0];
+        }
     }
 );
 
 division.addEventListener("click", () => {
-        currentOperation = "divide";
-        cache = +inputArray.join("");
-        inputArray = [0];
+        if (cache === undefined) {
+            currentOperation = "divide";
+            cache = +inputArray.join("");
+            inputArray = [0];
+        } else {
+            getResult();
+            currentOperation = "divide";
+            inputArray = [0];
+        }
     }
 );
 
