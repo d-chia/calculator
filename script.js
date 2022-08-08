@@ -90,11 +90,16 @@ decimal.addEventListener("click", decInput);
 
 
 //declare function to add decimal point to array
+//only executes when array does not include decimal point (prevent multiple points)
 
 function decInput() {
-    inputArray.push(".");
-    displayValue = +inputArray.join("");
-    displayUpdate();
+    if (!(inputArray.includes(".")) ) {
+        inputArray.push(".");
+        displayValue = +inputArray.join("");
+        displayUpdate();
+    } else {
+        return;
+    }
 };
 
 
