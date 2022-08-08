@@ -4,7 +4,7 @@ let firstNum;
 let secondNum;
 let cache = undefined;
 let currentOperation = undefined;
-let inputArray = [0];
+let inputArray = [];
 let displayValue = 0;
 
 
@@ -37,7 +37,7 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-    if (b == 0) {
+    if (b === 0) {
         reset ();
         return alert("Don't break the universe!");
     } else {
@@ -84,6 +84,21 @@ function numInput(e) {
 };
 
 
+//add event listener for decimal button 
+
+decimal.addEventListener("click", decInput);
+
+
+//declare function to add decimal point to array
+
+function decInput() {
+    inputArray.push(".");
+    displayValue = +inputArray.join("");
+    displayUpdate();
+};
+
+
+
 //add event listener to AC 
 //add clear all by emptying and zeroing arrays and inputs
 
@@ -107,13 +122,13 @@ addition.addEventListener("click", () => {
         if (cache === undefined) {
             currentOperation = "add";
             cache = +inputArray.join("");
-            inputArray = [0];
+            inputArray = [];
         } else {
             getResult();
             displayValue = cache;
             displayUpdate();
             currentOperation = "add";
-            inputArray = [0];
+            inputArray = [];
         }
     }
 );
@@ -122,13 +137,13 @@ subtraction.addEventListener("click", () => {
         if (cache === undefined) {
             currentOperation = "subtract";
             cache = +inputArray.join("");
-            inputArray = [0];
+            inputArray = [];
         } else {
             getResult();
             displayValue = cache;
             displayUpdate();
             currentOperation = "subtract";
-            inputArray = [0];
+            inputArray = [];
         }
     }
 );
@@ -137,13 +152,13 @@ multiplication.addEventListener("click", () => {
         if (cache === undefined) {
             currentOperation = "multiply";
             cache = +inputArray.join("");
-            inputArray = [0];
+            inputArray = [];
         } else {
             getResult();
             displayValue = cache;
             displayUpdate();
             currentOperation = "multiply";
-            inputArray = [0];
+            inputArray = [];
         }
     }
 );
@@ -152,13 +167,13 @@ division.addEventListener("click", () => {
         if (cache === undefined) {
             currentOperation = "divide";
             cache = +inputArray.join("");
-            inputArray = [0];
+            inputArray = [];
         } else {
             getResult();
             displayValue = cache;
             displayUpdate();
             currentOperation = "divide";
-            inputArray = [0];
+            inputArray = [];
         }
     }
 );
@@ -171,7 +186,7 @@ division.addEventListener("click", () => {
 equals.addEventListener("click", () => {
         getResult();
         displayValue = cache;
-        inputArray = [0];
+        inputArray = [];
         displayUpdate();
     }
 );
@@ -182,7 +197,8 @@ equals.addEventListener("click", () => {
 function getResult() {
     let x = +inputArray.join("");
     let result = operate(cache, currentOperation, x);
-    cache = result;
+    let resultRounded = ((Math.round(result*100000000))/100000000);
+    cache = resultRounded;
 }
 
 
@@ -193,3 +209,6 @@ function getResult() {
 //when press operation --> store whatever is in array in cache --> empty input array  --> fill input array again (default 0?) --> operation or equals puts number in cache again --> display cache as result
 //continuation: refactor calculation of result in own function --> call function when cache is not empty OR: if currentOperation != default --> store result in cache --> continue normal
 //for keyboard input: addEvent Listener for keydown on button id --> trigger buttons
+//limit space or length for numbers in display
+//add functionality to decimal point button
+//add rounding of results to specific decimals
