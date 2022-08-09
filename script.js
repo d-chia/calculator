@@ -63,7 +63,13 @@ function operate(firstNum, calculation, secondNum) {
 const displayContent = document.querySelector("#displayContent");
 
 function displayUpdate() {
-    displayContent.innerText = displayValue};
+    if (displayValue.toString().length < 15) {
+        displayContent.innerText = displayValue;
+    } else {
+        displayContent.innerText = displayValue.toExponential(4);
+    }
+}
+
 
 displayUpdate();
 
@@ -205,7 +211,6 @@ function getResult() {
     let resultRounded = ((Math.round(result*100000000))/100000000);
     cache = resultRounded;
 }
-
 
 
 
