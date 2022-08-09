@@ -213,6 +213,22 @@ function getResult() {
 }
 
 
+//add keydown event listener for backspace
+//declare function to delete last input in input array
+
+window.addEventListener("keydown", deleteLast);
+
+function deleteLast(e) {
+    if (e.keyCode == "8") {
+        inputArray.pop();
+        displayValue = +inputArray.join("");
+        displayUpdate();
+    }
+}
+
+
+
+
 
 
 //notes:
