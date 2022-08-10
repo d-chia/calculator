@@ -195,11 +195,13 @@ division.addEventListener("click", () => {
 //shows result in display
 
 equals.addEventListener("click", () => {
+    if (currentOperation != undefined){
         getResult();
         displayValue = cache;
         inputArray = [];
         displayUpdate();
-    }
+    } 
+}
 );
 
 
@@ -210,6 +212,7 @@ function getResult() {
     let result = operate(cache, currentOperation, x);
     let resultRounded = ((Math.round(result*100000000))/100000000);
     cache = resultRounded;
+    currentOperation = undefined;
 }
 
 
