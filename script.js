@@ -195,13 +195,11 @@ division.addEventListener("click", () => {
 //shows result in display
 
 equals.addEventListener("click", () => {
-    if (currentOperation != undefined){
         getResult();
         displayValue = cache;
         inputArray = [];
         displayUpdate();
-    } 
-}
+    }
 );
 
 
@@ -212,7 +210,6 @@ function getResult() {
     let result = operate(cache, currentOperation, x);
     let resultRounded = ((Math.round(result*100000000))/100000000);
     cache = resultRounded;
-    currentOperation = undefined;
 }
 
 
@@ -229,15 +226,3 @@ function deleteLast(e) {
     }
 }
 
-
-
-
-
-
-//notes:
-//when press operation --> store whatever is in array in cache --> empty input array  --> fill input array again (default 0?) --> operation or equals puts number in cache again --> display cache as result
-//continuation: refactor calculation of result in own function --> call function when cache is not empty OR: if currentOperation != default --> store result in cache --> continue normal
-//for keyboard input: addEvent Listener for keydown on button id --> trigger buttons
-//limit space or length for numbers in display
-//add functionality to decimal point button
-//add rounding of results to specific decimals
